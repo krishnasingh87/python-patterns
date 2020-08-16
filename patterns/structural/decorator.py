@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 *What is this pattern about?
 The Decorator pattern is used to dynamically add a new feature to an
@@ -27,10 +24,8 @@ https://sourcemaking.com/design_patterns/decorator
 Adds behaviour to object without affecting its class.
 """
 
-from __future__ import print_function
 
-
-class TextTag(object):
+class TextTag:
     """Represents a base text tag"""
 
     def __init__(self, text):
@@ -60,12 +55,20 @@ class ItalicWrapper(TextTag):
         return "<i>{}</i>".format(self._wrapped.render())
 
 
-if __name__ == '__main__':
-    simple_hello = TextTag("hello, world!")
-    special_hello = ItalicWrapper(BoldWrapper(simple_hello))
-    print("before:", simple_hello.render())
-    print("after:", special_hello.render())
+def main():
+    """
+    >>> simple_hello = TextTag("hello, world!")
+    >>> special_hello = ItalicWrapper(BoldWrapper(simple_hello))
 
-### OUTPUT ###
-# before: hello, world!
-# after: <i><b>hello, world!</b></i>
+    >>> print("before:", simple_hello.render())
+    before: hello, world!
+
+    >>> print("after:", special_hello.render())
+    after: <i><b>hello, world!</b></i>
+    """
+
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()

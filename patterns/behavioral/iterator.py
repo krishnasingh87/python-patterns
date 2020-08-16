@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 Implementation of the iterator pattern with a generator
@@ -8,8 +5,6 @@ Implementation of the iterator pattern with a generator
 *TL;DR
 Traverses a container and accesses the container's elements.
 """
-
-from __future__ import print_function
 
 
 def count_to(count):
@@ -45,4 +40,5 @@ def main():
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

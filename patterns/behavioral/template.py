@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 An example of the Template pattern in Python
 
@@ -72,4 +69,5 @@ def main():
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

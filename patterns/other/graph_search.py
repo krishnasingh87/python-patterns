@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-""
-
-
 class GraphSearch:
 
     """Graph search emulation in python, from source
@@ -52,18 +46,24 @@ class GraphSearch:
         return shortest
 
 
-# example of graph usage
-graph = {'A': ['B', 'C'], 'B': ['C', 'D'], 'C': ['D'], 'D': ['C'], 'E': ['F'], 'F': ['C']}
+def main():
+    """
+    # example of graph usage
+    >>> graph = {'A': ['B', 'C'], 'B': ['C', 'D'], 'C': ['D'], 'D': ['C'], 'E': ['F'], 'F': ['C']}
 
-# initialization of new graph search object
-graph1 = GraphSearch(graph)
+    # initialization of new graph search object
+    >>> graph1 = GraphSearch(graph)
+
+    >>> print(graph1.find_path('A', 'D'))
+    ['A', 'B', 'C', 'D']
+    >>> print(graph1.find_all_path('A', 'D'))
+    [['A', 'B', 'C', 'D'], ['A', 'B', 'D'], ['A', 'C', 'D']]
+    >>> print(graph1.find_shortest_path('A', 'D'))
+    ['A', 'B', 'D']
+    """
 
 
-print(graph1.find_path('A', 'D'))
-print(graph1.find_all_path('A', 'D'))
-print(graph1.find_shortest_path('A', 'D'))
+if __name__ == "__main__":
+    import doctest
 
-### OUTPUT ###
-# ['A', 'B', 'C', 'D']
-# [['A', 'B', 'C', 'D'], ['A', 'B', 'D'], ['A', 'C', 'D']]
-# ['A', 'B', 'D']
+    doctest.testmod()
